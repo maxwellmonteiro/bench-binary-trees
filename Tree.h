@@ -1,16 +1,21 @@
+#include <inttypes.h>
 #include "TreeNode.h"
+
+
+// intptr_t should be the native integer type on most sane systems.
+typedef int64_t intnative_t;
 
 class Tree 
 {
     private:
-        int depth;
+        intnative_t depth;
         TreeNode* root;
-        TreeNode* CreateNodes(int depth);
+        TreeNode* CreateNodes(intnative_t depth);
         void DestroyNodes(TreeNode* root);
-        long CalcCheckSum(TreeNode* root);
+        intnative_t CalcCheckSum(TreeNode* root);
     public:
-        Tree(int depth);
+        Tree(intnative_t depth);
         ~Tree();
-        long CheckSum();
+        intnative_t CheckSum();
         
 };

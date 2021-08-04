@@ -1,6 +1,6 @@
 #include "Tree.h"
 
-Tree::Tree(int depth)
+Tree::Tree(intnative_t depth)
 {
     root = CreateNodes(depth);
 }
@@ -10,7 +10,7 @@ Tree::~Tree()
     DestroyNodes(root);
 }
 
-TreeNode* Tree::CreateNodes(int depth) 
+TreeNode* Tree::CreateNodes(intnative_t depth) 
 {
     TreeNode* node = new TreeNode();
     if (depth > 0)
@@ -34,9 +34,9 @@ void Tree::DestroyNodes(TreeNode* root)
     delete root;
 }
 
-long Tree::CalcCheckSum(TreeNode* root)
+intnative_t Tree::CalcCheckSum(TreeNode* root)
 {
-    long checkSum = 0;
+    intnative_t checkSum = 0;
     if (root->GetLeftNode() != nullptr)
     {
         checkSum = CalcCheckSum(root->GetLeftNode()) + CalcCheckSum(root->GetRightNode());
@@ -44,7 +44,7 @@ long Tree::CalcCheckSum(TreeNode* root)
     return checkSum + 1;
 }
 
-long Tree::CheckSum()
+intnative_t Tree::CheckSum()
 {
     return CalcCheckSum(root);
 }
