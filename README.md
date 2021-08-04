@@ -1,9 +1,11 @@
-#Benchmark binary tree creation and destruction in c and c++
+# Benchmark binary tree creation and destruction in c and c++
 
 Requeriments
+
 - g++
 
 Instructions
+
 - $ cd \<project root\>
 - $ make
 - $ ./binary_tree.clang 21
